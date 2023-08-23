@@ -1,0 +1,15 @@
+{
+  "name": "noter",
+  "version": "1.0.0",
+  "description": "AI-powered notes-taking app for university lectures",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KLZX121",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^26.0.0"
+  }
+}
