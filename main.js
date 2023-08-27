@@ -4,31 +4,20 @@ const path = require('path');
 //remove default menu
 Menu.setApplicationMenu(null);
 
-function createWindow () {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, '/renderer/js/preload.js')
-    }
-  });
+function createWindow() {
+    const win = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, '/renderer/js/preload.js')
+        }
+    });
 
-  win.loadFile(path.join(__dirname, '/renderer/html/dashboard.html'));
+    win.loadFile('./renderer/html/dashboard.html');
 }
 
-
-app.whenReady().then(() => {
-  createWindow();
-
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
-  });
-});
+app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+    if (process.platform !== 'darwin') app.quit();
 });
