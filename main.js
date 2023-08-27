@@ -1,5 +1,8 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 const path = require('path');
+
+//remove default menu
+Menu.setApplicationMenu(null);
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -12,6 +15,7 @@ function createWindow () {
 
   win.loadFile(path.join(__dirname, '/renderer/html/dashboard.html'));
 }
+
 
 app.whenReady().then(() => {
   createWindow();
