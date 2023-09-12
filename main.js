@@ -23,9 +23,12 @@ function bootApp() {
     }
 
     async function handleFileOpen() {
-        const { canceled, filePaths } = await dialog.showOpenDialog()
+        const { canceled, filePaths } = await dialog.showOpenDialog({title: 'Upload Audio File', filters: [
+            {name: 'All', extensions: ['*']}, 
+            {name: 'Audio Files', extensions: ['wav']}
+        ]});
         if (!canceled) {
-            return filePaths[0]
+            return filePaths[0];
         }
     }
 }
