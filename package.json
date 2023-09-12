@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^26.0.0"
+  },
+  "dependencies": {
+    "microsoft-cognitiveservices-speech-sdk": "^1.32.0"
   }
 }
